@@ -8,17 +8,18 @@ def add(mix, something):
 def mixer_ice_with_cream():
     print('mixed ice with cream.')
     return ['ice', 'cream']
+    
+def is_in_drink(drink):
+    return('strawberry milkshake' in drink)
 
 def make_drink(drink, addons):
-    if 'coffee' in drink:
-        mix = []
-        mix = add(mix, 'coffee')
-        mix = add(mix, addons)
-    if 'strawberry milkshake' in drink:
-        mix = []
+    mix = []
+    if is_in_drink(drink):
         mix = mixer_ice_with_cream()
         mix = add(mix, 'strawberry')
-        mix = add(mix, addons)
+    else:
+        mix = add(mix, 'coffee')
+    mix = add(mix, addons)
     return mix
 
 final_drink = make_drink('strawberry milkshake', ['milk','sugar'])
